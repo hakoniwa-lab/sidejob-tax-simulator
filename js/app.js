@@ -23,6 +23,7 @@ function buildCrossLinkBanners() {
     { href: "../sidejob-checker/", text: "向いていそうな副業ジャンルを診断する →" },
     { href: "../subsidy-checker/", text: "副業に使える給付金・補助金を確認する →" },
     { href: "../takehome-calculator/", text: "本業の手取り年収も計算してみる →" },
+    { href: "../insurance-checker/", text: "副業収入も踏まえた保障の見直しを保険診断で確認する →" },
   ];
   return banners.map((b) => `<a class="cross-link-banner" href="${escapeHtml(b.href)}">${escapeHtml(b.text)}</a>`).join("");
 }
