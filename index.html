@@ -8,6 +8,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6465548593525933" crossorigin="anonymous"></script>
 <link rel="canonical" href="https://hakoniwa-lab.github.io/sidejob-tax-simulator/">
 <link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"副業の所得が20万円以下なら税金はかかりませんか？","acceptedAnswer":{"@type":"Answer","text":"所得税の確定申告は原則不要になりますが、住民税の申告は別途必要です(申告不要になるのは所得税のみ)。詳しくはお住まいの自治体にご確認ください。"}},{"@type":"Question","name":"副業の「収入」と「所得」は何が違いますか？","acceptedAnswer":{"@type":"Answer","text":"収入は副業で得た金額の合計、所得は収入から必要経費を差し引いた金額です。20万円ルールや税額の計算は所得を基準に行うため、本シミュレーターでも経費を差し引いた金額で計算しています。"}},{"@type":"Question","name":"会社に副業がバレないようにする方法はありますか？","acceptedAnswer":{"@type":"Answer","text":"本サイトはそうした情報は扱っていません。住民税の徴収方法(普通徴収)を選べる場合がありますが、可否は自治体・会社の規定によります。詳しくは税務署・お住まいの自治体にご確認ください。"}},{"@type":"Question","name":"診断結果は保存されますか？","acceptedAnswer":{"@type":"Answer","text":"保存されません。計算のたびにその場で処理しており、入力内容や結果を外部に送信・保存する仕組みは持っていません。"}}]}</script>
 </head>
 <body>
 <div id="app" class="app">
@@ -63,6 +64,48 @@
     </section>
 
   </main>
+
+  <section class="article" aria-labelledby="about-heading">
+    <div class="card card--article">
+      <h2 id="about-heading">副業の税金シミュレーターとは？</h2>
+      <p>副業を始めると、本業の給与にプラスして副業の所得分だけ所得税・住民税が増えます。また副業の所得(収入から経費を差し引いた額)が年間20万円を超えると、原則として確定申告が必要になります。この「20万円ルール」や実際にいくら税金が増えるのかが分かりにくく、副業を始める前の不安要素になりがちです。本シミュレーターでは、本業の年収・副業の収入と経費を入力するだけで、副業によって増える税額の目安と確定申告の要否を計算します。</p>
+    </div>
+
+    <div class="card card--article">
+      <h2>計算方法について</h2>
+      <p>本業の給与所得に副業の所得(雑所得、収入から経費を差し引いた額)を合算し、合算後の所得税・住民税と、本業のみの場合の所得税・住民税との差分を「副業による追加税額」として算出しています。あわせて副業所得が20万円を超えるかどうかで確定申告の要否の目安も表示します。</p>
+      <ul>
+        <li>入力内容はすべてブラウザ内で処理され、サーバーへの送信・保存は行いません</li>
+        <li>副業を事業所得として青色申告する場合や、社会保険料控除・配偶者控除等の他の控除がある場合は結果が異なります</li>
+        <li>正確な金額・申告要否は税務署・税理士にご確認ください</li>
+      </ul>
+    </div>
+
+    <div class="card card--article">
+      <h2>よくある質問</h2>
+      <details class="faq-item">
+        <summary>副業の所得が20万円以下なら税金はかかりませんか？</summary>
+        <p>所得税の確定申告は原則不要になりますが、住民税の申告は別途必要です(申告不要になるのは所得税のみ)。詳しくはお住まいの自治体にご確認ください。</p>
+      </details>
+      <details class="faq-item">
+        <summary>副業の「収入」と「所得」は何が違いますか？</summary>
+        <p>収入は副業で得た金額の合計、所得は収入から必要経費を差し引いた金額です。20万円ルールや税額の計算は所得を基準に行うため、本シミュレーターでも経費を差し引いた金額で計算しています。</p>
+      </details>
+      <details class="faq-item">
+        <summary>会社に副業がバレないようにする方法はありますか？</summary>
+        <p>本サイトはそうした情報は扱っていません。住民税の徴収方法(普通徴収)を選べる場合がありますが、可否は自治体・会社の規定によります。詳しくは税務署・お住まいの自治体にご確認ください。</p>
+      </details>
+      <details class="faq-item">
+        <summary>診断結果は保存されますか？</summary>
+        <p>保存されません。計算のたびにその場で処理しており、入力内容や結果を外部に送信・保存する仕組みは持っていません。</p>
+      </details>
+    </div>
+
+    <div class="card card--article">
+      <h2>運営者について</h2>
+      <p>本サイトはHAKONIWA LAB(運営者: 灯家)が個人で企画・開発・運営しています。ほかにも副業ジャンル診断や手取り年収シミュレーターなど、暮らしとお金にまつわる診断・計算ツールを複数公開しています。</p>
+    </div>
+  </section>
 
   <footer class="app-footer">
     <p>本サイトは副業の税額の概算把握を目的としており、正確な税額・確定申告要否を保証するものではありません。実際の手続き・申告は公式情報・専門家にご確認ください。「PR」表記のあるリンクにはプロモーション(アフィリエイト広告)が含まれます。</p>
