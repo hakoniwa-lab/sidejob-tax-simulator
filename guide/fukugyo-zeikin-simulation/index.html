@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>副業の税金シミュレーション｜年収別・副業所得別の追加税額早見表と、自分で計算する手順</title>
+<meta name="description" content="副業で税金はいくら増えるのか。本業の年収と副業所得の組み合わせ別に、増える所得税・住民税の目安を早見表にしました。「副業所得×自分の税率」で暗算する方法、経費で税額が変わる例、20万円以下でも住民税の申告がいる理由まで解説します。">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6465548593525933" crossorigin="anonymous"></script>
+<link rel="canonical" href="https://hakoniwalab.com/sidejob-tax-simulator/guide/fukugyo-zeikin-simulation/">
+<link rel="stylesheet" href="../../css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"副業の税金はざっくりどれくらい増えますか？","acceptedAnswer":{"@type":"Answer","text":"目安は「副業の所得（収入から経費を引いた額）×（所得税率＋住民税10%）」です。本業の課税所得が195万円以下なら約15%、195万円超〜330万円なら約20%、330万円超〜695万円なら約30%が副業所得から税金として増える計算になります。副業所得が20万円なら、それぞれ約3万円・約4万円・約6万円です。"}},{"@type":"Question","name":"副業の所得が20万円以下なら税金はかかりませんか？","acceptedAnswer":{"@type":"Answer","text":"かかります。20万円以下で不要になるのは所得税の確定申告であって、税金そのものが免除されるわけではありません。住民税は金額にかかわらず申告が必要で、お住まいの市区町村に住民税の申告をします。"}},{"@type":"Question","name":"経費を引くと税金はどれくらい変わりますか？","acceptedAnswer":{"@type":"Answer","text":"税金は収入ではなく所得（収入−経費）に対してかかるため、経費15万円を計上すれば課税される金額が15万円減ります。税率20%の人なら約3万円の差です。ただし副業に直接必要な支出だけが経費になり、領収書などの記録が必要です。"}},{"@type":"Question","name":"シミュレーターの結果と実際の税額はどのくらい違いますか？","acceptedAnswer":{"@type":"Answer","text":"本ツールは社会保険料控除や配偶者控除などを含めない簡易モデルのため、実際の税額はシミュレーション結果より少なくなることが多いです。特に本業で社会保険料を払っている人は課税所得が下がるので、税率区分が1段階低くなる場合があります。正確な税額は税務署や税理士にご確認ください。"}}]}</script>
+<style>
+.guide-nav { max-width: 720px; margin: 0 auto 16px; padding: 0 20px; font-size: 0.85rem; color: var(--color-text-muted); }
+.guide-nav a { color: var(--color-text-muted); }
+.guide-lead { font-size: 0.95rem; }
+.guide-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.92rem; }
+.guide-table th, .guide-table td { border: 1px solid var(--color-border); padding: 8px 10px; text-align: left; vertical-align: top; }
+.guide-table th { background: var(--color-bg); font-weight: 600; }
+.guide-table td.num, .guide-table th.num { text-align: right; white-space: nowrap; }
+.guide-table-wrap { overflow-x: auto; }
+.guide-note { font-size: 0.85rem; color: var(--color-text-muted); }
+.card--article h3 { font-size: 1rem; margin: 18px 0 6px; }
+.guide-cta { text-align: center; }
+.guide-cta .btn { display: inline-block; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <nav class="guide-nav" aria-label="パンくずリスト">
+    <a href="../../index.html">副業の税金シミュレーター</a> &raquo;
+    <span aria-current="page">副業の税金シミュレーション</span>
+  </nav>
+
+  <header class="app-header">
+    <p class="app-header__eyebrow">副業とお金のガイド</p>
+    <h1 class="app-header__title">副業の税金<br class="sp-only">シミュレーション</h1>
+    <p class="app-header__lead">副業で増える税金は「副業所得×自分の税率」でほぼ決まります。年収別の早見表と、自分で計算する手順をまとめました。</p>
+  </header>
+
+  <main class="main">
+
+    <section class="article">
+
+      <div class="card card--article">
+        <p class="guide-lead">副業を始めると税金がいくら増えるのか。「20万円までは大丈夫」という話は聞くけれど、実際の金額はよく分からない——この記事では、<strong>本業の年収と副業の所得の組み合わせごとに、増える税金の目安</strong>を表にしました。表の数字は<a href="../../index.html">副業の税金シミュレーター</a>と同じ計算式で出しているので、自分の数字を入れて確かめられます。</p>
+        <ul class="intro-points">
+          <li>年収別・副業所得別の追加税額早見表</li>
+          <li>「副業所得×税率」で暗算する方法</li>
+          <li>経費を引くと税額がどう変わるか</li>
+          <li>20万円以下でも住民税の申告がいる理由</li>
+        </ul>
+      </div>
+
+      <div class="card card--article">
+        <h2>結論：副業で増える税金は、副業所得の15〜30%が目安</h2>
+        <p>会社員が副業をした場合、副業の所得（収入から経費を引いた額）は本業の給与所得に合算され、<strong>合算後の所得に対する税率で課税</strong>されます。副業の分だけ別の税率になるわけではありません。</p>
+        <p>つまり、副業で増える税金はおおむね次の式で決まります。</p>
+        <table class="guide-table">
+          <tbody>
+            <tr><th>副業で増える税金</th><td>≒ 副業所得 × （本業の所得税率 ＋ 住民税10%）</td></tr>
+          </tbody>
+        </table>
+        <p>所得税率は課税所得の大きさで5%から45%まで段階的に上がります。多くの会社員は5%・10%・20%のどれかに当てはまるので、副業所得に対する負担はざっくり<strong>15%・20%・30%</strong>のどれかになります。</p>
+        <table class="guide-table">
+          <thead>
+            <tr><th>本業の課税所得</th><th>所得税率</th><th>副業所得に対する負担の目安</th><th>年収の目安（独身・社会保険料控除を考慮しない場合）</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>195万円以下</td><td>5%</td><td><strong>約15%</strong></td><td>〜約360万円</td></tr>
+            <tr><td>195万円超〜330万円</td><td>10%</td><td><strong>約20%</strong></td><td>約360万円〜約530万円</td></tr>
+            <tr><td>330万円超〜695万円</td><td>20%</td><td><strong>約30%</strong></td><td>約530万円〜約950万円</td></tr>
+          </tbody>
+        </table>
+        <p class="guide-note">※ 所得税には復興特別所得税（税率の2.1%分）が上乗せされます。住民税は所得割10%で計算しています。</p>
+      </div>
+
+      <div class="card card--article">
+        <h2>年収別・副業所得別の追加税額早見表</h2>
+        <p>本業の額面年収と副業所得（経費を引いた後の金額）の組み合わせで、<strong>副業によって増える所得税＋住民税の合計</strong>を計算した表です。カッコ内は税引き後に手元に残る副業所得です。</p>
+        <div class="guide-table-wrap">
+        <table class="guide-table">
+          <thead>
+            <tr><th>本業の年収 ＼ 副業所得</th><th class="num">10万円</th><th class="num">20万円</th><th class="num">30万円</th><th class="num">50万円</th><th class="num">100万円</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>300万円</th><td class="num">約1.5万円<br>(8.5万円)</td><td class="num">約3.0万円<br>(17.0万円)</td><td class="num">約4.5万円<br>(25.5万円)</td><td class="num">約8.0万円<br>(42.0万円)</td><td class="num">約18.1万円<br>(81.9万円)</td></tr>
+            <tr><th>400万円</th><td class="num">約2.0万円<br>(8.0万円)</td><td class="num">約4.0万円<br>(16.0万円)</td><td class="num">約6.1万円<br>(23.9万円)</td><td class="num">約10.1万円<br>(39.9万円)</td><td class="num">約20.2万円<br>(79.8万円)</td></tr>
+            <tr><th>500万円</th><td class="num">約2.0万円<br>(8.0万円)</td><td class="num">約4.0万円<br>(16.0万円)</td><td class="num">約6.9万円<br>(23.1万円)</td><td class="num">約13.0万円<br>(37.0万円)</td><td class="num">約28.2万円<br>(71.8万円)</td></tr>
+            <tr><th>600万円</th><td class="num">約3.0万円<br>(7.0万円)</td><td class="num">約6.1万円<br>(13.9万円)</td><td class="num">約9.1万円<br>(20.9万円)</td><td class="num">約15.2万円<br>(34.8万円)</td><td class="num">約30.4万円<br>(69.6万円)</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p class="guide-note">※ 給与所得控除と基礎控除（所得税48万円・住民税43万円）のみを考慮し、社会保険料控除・配偶者控除・生命保険料控除などは含めない簡易モデルです。実際の税額はこの表より少なくなることが多く、特に社会保険料控除を入れると税率区分が1段階下がる場合があります。住民税の均等割は本業ですでに負担しているため差分には含めていません。</p>
+        <h3>表の読み方</h3>
+        <ul>
+          <li>年収500万円で副業所得30万円のとき、税金は約6.9万円増え、副業の手残りは約23.1万円</li>
+          <li>年収300万円と400万円で、同じ副業所得なのに税額が違うのは、本業の所得税率が5%と10%で違うから</li>
+          <li>年収500万円の副業所得30万円以上で負担率が上がっているのは、合算した所得が10%の区分から20%の区分にまたがるから</li>
+        </ul>
+        <p>自分の年収や副業所得が表にない場合は、<a href="../../index.html">シミュレーター</a>に数字を入れると同じ計算式で結果が出ます。</p>
+      </div>
+
+      <div class="card card--article">
+        <h2>自分で計算する手順（年収400万円・副業所得30万円の例）</h2>
+        <p>シミュレーターの中身は次の4ステップです。電卓があれば手計算でも追えます。</p>
+        <h3>手順1：本業の給与所得を出す</h3>
+        <p>額面年収から給与所得控除を引きます。年収400万円の場合、給与所得控除は「収入×20%＋44万円」で124万円。給与所得は<strong>400万円−124万円＝276万円</strong>です。</p>
+        <h3>手順2：本業だけの税金を出す</h3>
+        <p>給与所得から基礎控除48万円を引いた228万円が課税所得です。所得税率10%の区分なので、所得税は「228万円×10%−9.75万円」に復興特別所得税2.1%を上乗せして約13.3万円。住民税は「（276万円−43万円）×10%」で約23.3万円（均等割を除く）です。</p>
+        <h3>手順3：副業を足した税金を出す</h3>
+        <p>課税所得に副業所得30万円を足して258万円。税率区分は10%のまま変わらないので、所得税は約16.4万円、住民税は約26.3万円（均等割を除く）になります。</p>
+        <h3>手順4：差額が「副業で増えた税金」</h3>
+        <p>所得税の差が約3.1万円、住民税の差が3万円。<strong>合計約6.1万円が副業によって増える税金</strong>です。副業所得30万円に対して約20%で、先ほどの「税率10%の人は約20%」と一致します。</p>
+        <p class="guide-note">※ 実際には社会保険料控除（年収400万円なら年間60万円前後）があるため課税所得はもっと小さくなり、税率区分が5%になる人も多くいます。その場合、副業所得に対する負担は約15%です。</p>
+      </div>
+
+      <div class="card card--article">
+        <h2>経費を引くと、税金はこう変わる</h2>
+        <p>税金がかかるのは「収入」ではなく「所得」、つまり<strong>収入から必要経費を引いた後の金額</strong>です。同じ年収400万円で、副業の収入が50万円のケースを比べます。</p>
+        <table class="guide-table">
+          <thead>
+            <tr><th></th><th class="num">経費0円</th><th class="num">経費15万円</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>副業の所得</th><td class="num">50万円</td><td class="num">35万円</td></tr>
+            <tr><th>増える所得税</th><td class="num">約5.1万円</td><td class="num">約3.6万円</td></tr>
+            <tr><th>増える住民税</th><td class="num">5.0万円</td><td class="num">3.5万円</td></tr>
+            <tr><th>増える税金の合計</th><td class="num"><strong>約10.1万円</strong></td><td class="num"><strong>約7.1万円</strong></td></tr>
+            <tr><th>確定申告（所得税）</th><td class="num">必要</td><td class="num">必要</td></tr>
+          </tbody>
+        </table>
+        <p>経費15万円で税金が約3万円減ります。副業に直接必要な支出（材料費、仕事用のソフト代、取材の交通費など）は経費になりますが、<strong>領収書や明細を残しておくこと</strong>が前提です。プライベートと兼用のものは、副業に使った割合だけを経費にします。</p>
+      </div>
+
+      <div class="card card--article">
+        <h2>「20万円以下なら申告不要」の正しい意味</h2>
+        <p>給与を1か所から受けていて年末調整を受けている会社員は、<strong>給与所得・退職所得以外の所得の合計が20万円以下なら、原則として所得税の確定申告は不要</strong>です。ただしここには3つの注意点があります。</p>
+        <ul>
+          <li><strong>不要なのは所得税の「確定申告」であって、税金が免除されるわけではない。</strong>住民税には20万円の基準がなく、副業所得があれば市区町村への住民税の申告が必要です</li>
+          <li><strong>判定するのは収入ではなく所得。</strong>収入25万円・経費7万円なら所得は18万円で20万円以下。逆に経費を計上しなければ収入がそのまま所得になります</li>
+          <li><strong>医療費控除やふるさと納税などで確定申告をするなら、20万円以下の副業所得もあわせて申告する。</strong>「申告しなくてよい」は「確定申告そのものをしない場合」の話です</li>
+        </ul>
+        <p>早見表の10万円・20万円の列は「確定申告が不要な範囲でも、住民税を中心に税金は増える」ことを示しています。</p>
+        <p>出典：国税庁「No.1900 給与所得者で確定申告が必要な人」<a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1900.htm" target="_blank" rel="noopener">https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1900.htm</a>／「No.2260 所得税の税率」<a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm" target="_blank" rel="noopener">https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm</a>／「No.1410 給与所得控除」<a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1410.htm" target="_blank" rel="noopener">https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1410.htm</a>。住民税の取り扱いはお住まいの自治体の案内をご確認ください。</p>
+      </div>
+
+      <div class="card card--article">
+        <h2>シミュレーションの結果を、どう使うか</h2>
+        <ul>
+          <li><strong>手残りで考える。</strong>副業所得30万円は、税引き後だと約21〜26万円。時給換算や「この副業を続けるか」の判断は手残りで行うと現実に近くなります</li>
+          <li><strong>納税分を先に取り分ける。</strong>確定申告後の所得税は翌年3月、住民税は翌年6月から徴収されます。副業所得の2〜3割を別口座に移しておくと、あとで慌てません</li>
+          <li><strong>住民税の徴収方法を確認する。</strong>確定申告書で住民税の徴収方法を「自分で納付」にできる場合がありますが、可否は自治体や所得の種類によります。会社への通知が気になる人は自治体に確認してください</li>
+        </ul>
+      </div>
+
+      <div class="card card--article">
+        <h2>よくある質問</h2>
+        <details class="faq-item">
+          <summary>副業の税金はざっくりどれくらい増えますか？</summary>
+          <p>目安は「副業の所得（収入から経費を引いた額）×（所得税率＋住民税10%）」です。本業の課税所得が195万円以下なら約15%、195万円超〜330万円なら約20%、330万円超〜695万円なら約30%が副業所得から税金として増える計算になります。副業所得が20万円なら、それぞれ約3万円・約4万円・約6万円です。</p>
+        </details>
+        <details class="faq-item">
+          <summary>副業の所得が20万円以下なら税金はかかりませんか？</summary>
+          <p>かかります。20万円以下で不要になるのは所得税の確定申告であって、税金そのものが免除されるわけではありません。住民税は金額にかかわらず申告が必要で、お住まいの市区町村に住民税の申告をします。</p>
+        </details>
+        <details class="faq-item">
+          <summary>経費を引くと税金はどれくらい変わりますか？</summary>
+          <p>税金は収入ではなく所得（収入−経費）に対してかかるため、経費15万円を計上すれば課税される金額が15万円減ります。税率20%の人なら約3万円の差です。ただし副業に直接必要な支出だけが経費になり、領収書などの記録が必要です。</p>
+        </details>
+        <details class="faq-item">
+          <summary>シミュレーターの結果と実際の税額はどのくらい違いますか？</summary>
+          <p>本ツールは社会保険料控除や配偶者控除などを含めない簡易モデルのため、実際の税額はシミュレーション結果より少なくなることが多いです。特に本業で社会保険料を払っている人は課税所得が下がるので、税率区分が1段階低くなる場合があります。正確な税額は税務署や税理士にご確認ください。</p>
+        </details>
+      </div>
+
+      <div class="card card--article">
+        <h2>まとめ</h2>
+        <ul>
+          <li>副業で増える税金 ≒ 副業所得 ×（本業の所得税率＋住民税10%）</li>
+          <li>会社員の多くは副業所得の<strong>約15%・20%・30%</strong>のどれかが目安</li>
+          <li>年収400万円・副業所得30万円なら、増える税金は約6.1万円</li>
+          <li>税金がかかるのは収入ではなく所得。経費の記録が税額を左右する</li>
+          <li>20万円以下で不要なのは所得税の確定申告だけ。住民税の申告は必要</li>
+          <li>シミュレーターは社会保険料控除を含まない簡易モデルなので、実際はやや少なくなることが多い</li>
+          <li>副業所得の2〜3割を納税用に取り分けておく</li>
+        </ul>
+        <p>自分の年収と副業の数字で確かめたい方は、本業の年収・副業の収入・経費の3つを入れるだけで、この記事と同じ計算式で追加税額と確定申告の要否が出ます。無料・登録不要です。</p>
+        <p class="guide-cta"><a class="btn btn--primary btn--large" href="../../index.html">副業の税金シミュレーターで計算する</a></p>
+        <p class="guide-note" style="text-align:center;">入力した金額は端末の中だけで処理され、外部への送信・保存は行いません。</p>
+      </div>
+
+      <div class="card card--article">
+        <h2>あわせて確認しておきたいこと</h2>
+        <ul>
+          <li><a href="../../../takehome-calculator/">手取り年収シミュレーター</a> — 本業の手取りを社会保険料込みで確認できます</li>
+          <li><a href="../../../sidejob-checker/">副業ジャンル診断</a> — これから副業を選ぶ段階なら、向いているジャンルを19種類から診断できます</li>
+          <li><a href="../../../furusato-simulator/">ふるさと納税シミュレーター</a> — 副業所得が増えると寄付の上限額も変わります</li>
+        </ul>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>本記事は国税庁が公表している税額計算の一般的な枠組みを整理したものであり、個別の税額や確定申告の要否を判断するものではありません。表の数値は社会保険料控除などを含まない簡易モデルによる概算です。実際の手続き・申告は税務署・お住まいの自治体・税理士にご確認ください。「PR」表記のあるリンクにはプロモーション(アフィリエイト広告)が含まれます。</p>
+    <p><a href="../../../privacy.html">プライバシーポリシー</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
