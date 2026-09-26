@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WTBHV5QYG3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WTBHV5QYG3');
+</script>
+<title>開業届・青色申告の期限カレンダー｜開業日を入れると提出期限が日付で出る</title>
+<meta name="description" content="開業日を入れるだけで、開業届・青色申告承認申請書・青色事業専従者給与の届出・給与支払事務所の開設届・インボイス登録の提出期限を日付で出します。2026年1月からの開業届の新しい期限(確定申告期限まで)、「開業から2か月」の数え方、土日祝の翌開庁日にも対応。今年から青色申告にできるかも判定します。無料・登録不要。">
+<link rel="canonical" href="https://hakoniwalab.com/sidejob-tax-simulator/kaigyo/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="開業届・青色申告の期限カレンダー | HAKONIWA LAB">
+<meta property="og:description" content="開業日を入れると、開業届・青色申告承認申請書などの提出期限が日付で出ます。今年から青色申告にできるかも判定。">
+<meta property="og:url" content="https://hakoniwalab.com/sidejob-tax-simulator/kaigyo/">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6465548593525933" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"開業届はいつまでに出せばいいですか？","acceptedAnswer":{"@type":"Answer","text":"2026年1月1日以後に開業した場合は、開業した年分の確定申告期限(翌年3月15日。土日祝なら翌開庁日)までです(所得税法229条)。2025年12月31日までの開業は「開業から1か月以内」でした。"}},{"@type":"Question","name":"青色申告承認申請書の「開業から2か月以内」はどう数えますか？","acceptedAnswer":{"@type":"Answer","text":"開業日の翌日から数え、2か月後の同じ日の前日が期限です(国税通則法10条1項)。4月1日に開業した場合は6月1日です。期限が土日祝や12月29日〜31日に当たるときは翌開庁日になります。1月1日〜15日の開業はその年の3月15日が期限です。"}},{"@type":"Question","name":"青色申告の申請が間に合わなかったらどうなりますか？","acceptedAnswer":{"@type":"Answer","text":"開業した年は白色申告になります。翌年分から青色申告にするには、翌年の3月15日までに青色申告承認申請書を出します(所得税法144条)。"}},{"@type":"Question","name":"入力した内容は保存されますか？","acceptedAnswer":{"@type":"Answer","text":"お使いの端末(ブラウザ)の中にだけ保存し、次に開いたときにすぐ期限を出すために使います。外部へは送信しません。"}}]}</script>
+<style>
+.guide-nav { margin: 0 auto 16px; font-size: 0.85rem; color: var(--color-text-muted); }
+.guide-nav a { color: var(--color-text-muted); }
+.date-row { display: flex; gap: 8px; }
+.date-row .quiz-select { flex: 1; min-width: 0; }
+.date-preview { margin: 6px 0 0; font-size: 0.9rem; color: var(--color-text-muted); }
+.form-help { margin: 6px 0 0; font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.6; }
+.form-error { color: var(--color-warn-text); background: var(--color-warn-bg); padding: 8px 10px; border-radius: var(--radius-sm); font-size: 0.9rem; }
+.kg-options { display: grid; gap: 8px; margin: 0; padding: 0; border: 0; }
+.kg-options legend { font-weight: 600; margin-bottom: 6px; padding: 0; }
+.kg-check { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); cursor: pointer; line-height: 1.5; }
+.kg-check input { margin-top: 4px; flex-shrink: 0; width: 18px; height: 18px; accent-color: var(--color-primary); }
+.kg-check small { display: block; color: var(--color-text-muted); font-size: 0.8rem; }
+#form-card .form-field { text-align: left; }
+.kg-judge-card { text-align: center; }
+.kg-judge { color: var(--color-accent); }
+.kg-judge--late { color: var(--color-warn-text); }
+.kg-next { margin: 12px 0 8px; font-size: 0.95rem; line-height: 1.7; }
+.kg-next strong { font-size: 1.25rem; }
+.kg-next__left { display: inline-block; margin-left: 8px; font-size: 0.85rem; color: var(--color-primary); font-weight: 600; }
+.kg-meta { margin: 10px 0 0; font-size: 0.82rem; color: var(--color-text-muted); }
+.kg-card__lead { margin: 0 0 10px; font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; }
+.kg-list { display: grid; gap: 10px; }
+.kg-row { border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 12px; background: var(--color-surface); }
+.kg-row.is-past { opacity: 0.6; }
+.kg-row__head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.kg-row__name { margin: 0; font-weight: 600; line-height: 1.5; flex: 1 1 14em; }
+.kg-row__where { display: block; font-weight: 400; font-size: 0.8rem; color: var(--color-text-muted); margin-top: 2px; }
+.kg-row__date { margin: 0; font-weight: 700; color: var(--color-primary); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.kg-row__tags { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 8px; }
+.kg-row__note { margin: 8px 0 0; font-size: 0.84rem; line-height: 1.7; color: var(--color-text-muted); }
+.kg-badge { display: inline-block; font-size: 0.75rem; padding: 2px 8px; border-radius: 999px; background: var(--color-badge-bg); color: var(--color-badge-text); }
+.kg-badge--now { background: var(--color-primary); color: var(--color-primary-contrast); }
+.kg-badge--past { background: var(--color-warn-bg); color: var(--color-warn-text); }
+.kg-left { font-size: 0.82rem; font-weight: 600; color: var(--color-accent); }
+.kg-law { font-size: 0.72rem; color: var(--color-text-muted); margin-left: auto; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 8px; }
+.actions .btn { flex: 1 1 8em; }
+.action-status { min-height: 1.2em; font-size: 0.85rem; color: var(--color-text-muted); margin: 0 0 16px; }
+.offer-links { margin: 10px 0 6px; }
+.guide-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.88rem; }
+.guide-table th, .guide-table td { border: 1px solid var(--color-border); padding: 8px 10px; text-align: left; vertical-align: top; }
+.guide-table th { background: var(--color-bg); font-weight: 600; }
+.table-scroll { overflow-x: auto; }
+.sources { font-size: 0.85rem; line-height: 1.7; padding-left: 1.2em; }
+@media print {
+  .no-print, .ad-slot, .app-footer, .guide-nav { display: none !important; }
+  .kg-row.is-past { opacity: 1; }
+}
+</style>
+</head>
+<body>
+<div id="app" class="app">
+
+  <nav class="guide-nav" aria-label="パンくずリスト">
+    <a href="../">副業の税金シミュレーター</a> &raquo;
+    <span aria-current="page">開業届・青色申告の期限カレンダー</span>
+  </nav>
+
+  <header class="app-header">
+    <p class="app-header__eyebrow">開業日を入れるだけ</p>
+    <h1 class="app-header__title">開業届・青色申告の<br class="sp-only">期限カレンダー</h1>
+    <p class="app-header__lead">開業届・青色申告承認申請書・家族に払う給与の届出・インボイス登録まで。個人で開業したときに税務署へ出す書類の期限を日付で出し、今年から青色申告にできるかを判定します。</p>
+  </header>
+
+  <main id="main" class="main">
+
+    <section id="form-card" class="card card--intro no-print">
+      <form id="form" novalidate>
+        <div class="form-field">
+          <label for="year">開業日(開業した日・開業する予定の日)</label>
+          <div class="date-row">
+            <select id="year" class="quiz-select" aria-label="年"></select>
+            <select id="month" class="quiz-select" aria-label="月"></select>
+            <select id="day" class="quiz-select" aria-label="日"></select>
+          </div>
+          <p id="date-preview" class="date-preview" aria-live="polite"></p>
+          <p class="form-help">開業日は、事業を始めた日です。開業届に書く日と同じにしてください。2026年1月1日以後の開業が対象です。</p>
+        </div>
+
+        <div class="form-field">
+          <fieldset class="kg-options">
+            <legend>あてはまるものにチェック</legend>
+            <label class="kg-check"><input type="checkbox" id="opt-kazoku"><span>同じ生計の家族に給与を払う<small>配偶者や親に手伝ってもらい、給与を経費にしたい</small></span></label>
+            <label class="kg-check"><input type="checkbox" id="opt-koyou"><span>家族以外の人を雇う<small>アルバイト・従業員に給与を払う</small></span></label>
+            <label class="kg-check"><input type="checkbox" id="opt-invoice"><span>インボイスに登録する(考えている)<small>取引先から登録番号を求められている</small></span></label>
+          </fieldset>
+        </div>
+
+        <p id="form-error" class="form-error" hidden></p>
+        <button type="submit" class="btn btn--primary btn--large">期限を出す</button>
+      </form>
+      <ul class="intro-points">
+        <li>無料・登録不要。入力した内容は端末の中にだけ保存します</li>
+        <li>2026年1月からの開業届の新しい期限(確定申告期限まで)に対応</li>
+        <li>期限が土日祝・年末年始に当たるものは翌開庁日にずらします</li>
+        <li>カレンダーアプリへの登録と印刷ができます</li>
+      </ul>
+    </section>
+
+    <section id="result" hidden aria-live="polite">
+      <div class="card kg-judge-card" id="judge-card"></div>
+
+      <div class="actions no-print">
+        <button type="button" id="btn-ics" class="btn btn--primary">カレンダーに登録</button>
+        <button type="button" id="btn-copy" class="btn btn--ghost">一覧をコピー</button>
+        <button type="button" id="btn-print" class="btn btn--ghost">印刷する</button>
+      </div>
+      <p id="action-status" class="action-status no-print" aria-live="polite"></p>
+
+      <div id="groups"></div>
+
+      <div class="card no-print">
+        <h2 class="card__title">開業届と青色申告の申請書を、まとめて作るなら</h2>
+        <p class="kg-card__lead">質問に答えていくと、開業届と青色申告承認申請書が一緒にできあがる無料のサービスがあります。</p>
+        <div class="offer-links"><a class="result-card__link result-card__link--offer" href="https://px.a8.net/svt/ejp?a8mat=4BCFNL+8TXR2Q+35XE+I17WY" target="_blank" rel="nofollow sponsored noopener">開業書類を無料で作成【弥生のかんたん開業届】<span class="badge badge--pr">PR</span></a></div>
+      </div>
+
+      <p class="form-help">日付は条文と国税庁の案内にもとづく一般的な数え方による目安です。実際の期限は税務署でご確認ください。</p>
+
+      <div id="ad-slot-result-bottom" class="ad-slot no-print" aria-hidden="true"></div>
+
+      <div class="result-cross-links no-print">
+        <a class="cross-link-banner" href="../">副業でいくら税金が増えるか計算する →</a>
+        <a class="cross-link-banner" href="../../sidejob-checker/guide/kaigyo-todoke-teishutsu/">開業届を実際に出してみた記録(e-Tax・青色申告の期限が4日延びた話) →</a>
+      </div>
+      <p class="no-print" style="margin-top:16px"><button type="button" id="btn-edit" class="btn btn--ghost btn--large">開業日を変える</button></p>
+    </section>
+
+  </main>
+
+  <section class="article no-print" aria-label="解説">
+    <div class="card card--article">
+      <h2>2026年から、開業届の期限が変わりました</h2>
+      <p>開業届(個人事業の開業・廃業等届出書)の期限は、長く「開業から1か月以内」でした。令和7年度の税制改正で所得税法229条が改正され、<strong>2026年1月1日以後の開業は「開業した年分の確定申告期限まで」</strong>になりました。</p>
+      <p>ただし、急がなくてよくなったのは開業届だけです。<strong>青色申告承認申請書の期限(開業から2か月以内)は変わっていません。</strong>開業届をゆっくり出すつもりでいると、青色申告の期限を過ぎてしまうことがあります。</p>
+      <div class="table-scroll">
+        <table class="guide-table">
+          <thead><tr><th>書類</th><th>期限</th><th>7月20日に開業した場合</th></tr></thead>
+          <tbody>
+            <tr><td>開業届</td><td>開業した年の確定申告期限(翌年3月15日)</td><td>翌年3月15日</td></tr>
+            <tr><td>青色申告承認申請書</td><td>開業から2か月以内(1月15日までの開業は3月15日)</td><td>9月20日 → 休みが続くので9月24日(2026年)</td></tr>
+            <tr><td>青色事業専従者給与の届出</td><td>青色申告承認申請書と同じ</td><td>同上</td></tr>
+            <tr><td>給与支払事務所等の開設届</td><td>給与を払う事務所を開設してから1か月以内</td><td>8月20日</td></tr>
+            <tr><td>インボイス登録(開業日から登録したい場合)</td><td>開業した年の12月31日まで(延びない)</td><td>12月31日</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card card--article">
+      <h2>「開業から2か月以内」の数え方</h2>
+      <p>税の期限は国税通則法10条で数え方が決まっています。</p>
+      <ul>
+        <li><strong>開業日は数えない</strong>。翌日から数えます</li>
+        <li>2か月後の同じ日の<strong>前日</strong>が期限。4月1日開業なら6月1日、7月20日開業なら9月20日</li>
+        <li>2か月後に同じ日がない月(12月31日開業→2月)は、その月の末日</li>
+        <li>期限が土曜・日曜・祝日・12月29日〜31日に当たるときは、<strong>次の開庁日</strong>が期限</li>
+      </ul>
+      <p>2026年7月20日に開業すると、期限の9月20日が日曜で、21日が敬老の日、22日が国民の休日、23日が秋分の日と続くため、実際の期限は<strong>9月24日</strong>まで延びます。</p>
+      <p>一方、インボイス登録と簡易課税の「開業した年の12月31日まで」は、法律上「その課税期間中」という期間の定めで、期限の延長の対象になりません。12月31日が休みでも延びないので注意してください。</p>
+    </div>
+
+    <div class="card card--article">
+      <h2>青色申告に間に合わなかったら</h2>
+      <p>開業した年は白色申告になります。翌年分から青色申告にするには、<strong>翌年の3月15日まで</strong>に青色申告承認申請書を出します(所得税法144条)。開業した年の分の確定申告(同じ3月15日が期限)と同じ時期なので、一緒に準備すると忘れません。</p>
+      <p>申請書を出したあと、12月31日(11月1日以後の開業は翌年2月15日)までに税務署から却下の通知がなければ、承認されたものとみなされます(所得税法147条)。承認の通知が届かないまま青色申告になることも多いので、却下の通知が来ていなければ心配いりません。</p>
+    </div>
+
+    <div class="card card--article">
+      <h2>よくある質問</h2>
+      <details class="faq-item">
+        <summary>開業届はいつまでに出せばいいですか？</summary>
+        <p>2026年1月1日以後に開業した場合は、開業した年分の確定申告期限(翌年3月15日。土日祝なら翌開庁日)までです(所得税法229条)。2025年12月31日までの開業は「開業から1か月以内」でした。</p>
+      </details>
+      <details class="faq-item">
+        <summary>青色申告承認申請書の「開業から2か月以内」はどう数えますか？</summary>
+        <p>開業日の翌日から数え、2か月後の同じ日の前日が期限です(国税通則法10条1項)。4月1日に開業した場合は6月1日です。期限が土日祝や12月29日〜31日に当たるときは翌開庁日になります。1月1日〜15日の開業はその年の3月15日が期限です。</p>
+      </details>
+      <details class="faq-item">
+        <summary>青色申告の申請が間に合わなかったらどうなりますか？</summary>
+        <p>開業した年は白色申告になります。翌年分から青色申告にするには、翌年の3月15日までに青色申告承認申請書を出します(所得税法144条)。</p>
+      </details>
+      <details class="faq-item">
+        <summary>入力した内容は保存されますか？</summary>
+        <p>お使いの端末(ブラウザ)の中にだけ保存し、次に開いたときにすぐ期限を出すために使います。外部へは送信しません。</p>
+      </details>
+    </div>
+
+    <div class="card card--article">
+      <h2>参考にした資料</h2>
+      <ul class="sources">
+        <li><a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2090.htm" target="_blank" rel="noopener">国税庁 タックスアンサー No.2090 新たに事業を始めたときの届出など</a></li>
+        <li><a href="https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/shinkoku/annai/04.htm" target="_blank" rel="noopener">国税庁 A1-5 個人事業の開業届出・廃業届出等手続</a></li>
+        <li><a href="https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/shinkoku/annai/09.htm" target="_blank" rel="noopener">国税庁 A1-8 所得税の青色申告承認申請手続</a></li>
+        <li><a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2072.htm" target="_blank" rel="noopener">国税庁 タックスアンサー No.2072 青色申告特別控除</a></li>
+        <li><a href="https://laws.e-gov.go.jp/law/340AC0000000033" target="_blank" rel="noopener">e-Gov法令検索「所得税法」57条・120条・144条・147条・229条・230条</a></li>
+        <li><a href="https://laws.e-gov.go.jp/law/340CO0000000096" target="_blank" rel="noopener">e-Gov法令検索「所得税法施行令」100条・123条</a></li>
+        <li><a href="https://laws.e-gov.go.jp/law/337AC0000000066" target="_blank" rel="noopener">e-Gov法令検索「国税通則法」10条(期間の計算及び期限の特例)</a></li>
+      </ul>
+    </div>
+
+    <div class="card card--article">
+      <h2>運営者について</h2>
+      <p>本サイトはHAKONIWA LAB(運営者: 灯家)が個人で企画・開発・運営しています。<a href="../">副業の税金シミュレーター</a>や副業ジャンル診断など、暮らしとお金にまつわる計算ツールを公開しています。</p>
+    </div>
+  </section>
+
+  <footer class="app-footer">
+    <p>表示する日付は法令にもとづく一般的な数え方による目安で、個別の事情によって期限が変わることがあります。本サイトは税務の相談に応じるものではありません。実際の手続きは税務署や税理士にご確認ください。「PR」表記のあるリンクにはプロモーション(アフィリエイト広告)が含まれます。</p>
+    <p><a href="../../about.html">運営者情報</a>・<a href="../../contact.html">お問い合わせ</a>・<a href="../../privacy.html">プライバシーポリシー</a></p>
+  </footer>
+
+</div>
+
+<script src="../js/kaigyo-date.js"></script>
+<script src="../js/kaigyo.js"></script>
+<script src="../js/kaigyo-app.js"></script>
+</body>
+</html>
